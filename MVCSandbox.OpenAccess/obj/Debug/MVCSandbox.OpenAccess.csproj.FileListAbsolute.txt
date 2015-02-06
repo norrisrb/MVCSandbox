@@ -1,0 +1,8 @@
+C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\bin\Debug\MVCSandbox.OpenAccess.dll.config
+C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\bin\Debug\MVCSandbox.OpenAccess.dll
+C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\bin\Debug\MVCSandbox.OpenAccess.pdb
+C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\bin\Debug\Telerik.OpenAccess.35.Extensions.dll
+C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\bin\Debug\Telerik.OpenAccess.35.Extensions.xml
+C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\obj\Debug\MVCSandbox.OpenAccess.dll
+C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\obj\Debug\MVCSandbox.OpenAccess.pdb
+C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\obj\Debug\MVCSandbox.OpenAccess.csprojResolveAssemblyReference.cache

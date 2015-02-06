@@ -1,0 +1,133 @@
+﻿@model IEnumerable<MVCSandbox.OpenAccess.CourseMaintenance>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section Styles
+{
+    <style>
+        #datagrid {
+            border-width: 0;
+            height: 100%;
+        }
+    </style>
+}
+
+@section Scripts
+{
+    <script>
+        var maintenanceTypes = [{
+            "value": 1,
+            "text": "Large Holes"
+        }, {
+            "value": 2,
+            "text": "Small Holes"
+        }, {
+            "value": 3,
+            "text": "Verti-cut"
+        }];
+
+        $(document).ready(function () {
+
+            var gridDataSource = new kendo.data.DataSource({
+                pageSize: 30,
+                transport: {
+                    read: {
+                        url: "/CourseMaintenance/GetCourseMaintenance",
+                    }
+                },
+                schema:
+                {
+                    model:
+                    {
+                        fields:
+                        {
+                            CourseMaintId: { type: "number" },
+                            CourseId: { type: "number" },
+                            MaintenanceDate: { type: "date" },
+                            MaintenanceType: { type: "string"},
+                            FirmDate: { type: "boolean" },
+                        }
+                    }
+                }
+            });
+
+            var grid = $("#datagrid").kendoGrid({
+                toolbar: ["create", "excel", "pdf"],
+                messages: {
+                    commands: {
+                        create: "Add Course Maintenance",
+                    }
+                },
+                dataSource: gridDataSource,
+                filterable: {
+                    mode: "row"
+                },
+                sortable: true,
+                pagable: {
+                    refresh: true,
+                },
+                columns:
+                [
+                    {
+                        field: "",
+                        title: "&nbsp;",
+                        width: 240,
+                        filterable: false,
+                        sortable: false,
+                        template: "<a class=\"k-button k-button-icontext k-grid-edit\" href=\"@Url.Action("Edit")?id=#= CourseMaintId #\" title=\"View Course Detail\"><span class=\"k-icon k-edit\"></span>Edit</a><a class=\"k-button k-button-icontext k-grid-delete\" href=\"@Url.Action("Delete")?id=#= CourseMaintId #\" title=\"Delete Course\"><span class=\"k-icon k-delete\"></span>Delete</a>"
+                    },
+                    {
+                        field: "CourseId",
+                        title: "Course",
+                        headerAttributes: { style: "text-align: center;" },
+                        filterable: {
+                            cell: {
+                                inputWidth: "100%",
+                                showOperators: false,
+                                opeartor: "contains"
+                            }
+                        }
+                    },
+                    {
+                        field: "MaintenanceDate",
+                        title: "Maintenance Date",
+                        headerAttributes: { style: "text-align: center;" },
+                        attributes: { style: "text-align: right;" },
+                        format: "{0:MM/dd/yyyy}"
+                    },
+                    {
+                        field: "MaintenanceType",
+                        title: "Maintenance Type",
+                        headerAttributes: { style: "text-align: center;" },
+                        values: maintenanceTypes,
+                        filterable: {
+                            cell: {
+                                inputWidth: "100%",
+                                showOperators: false,
+                                opeartor: "contains"
+                            }
+                        }
+                    },
+                    {
+                        field: "FirmDate",
+                        title: "Date Firm",
+                        width: 200,
+                        template: "<input type=\"checkbox\"#if(FirmDate){#checked#}# />",
+                        headerAttributes: { style: "text-align: center" },
+                        attributes: { style: "text-align: center;" },
+                        filterable: false,
+                    }
+                ]
+            }).data("kendoGrid");
+
+            $(".k-grid-add").on("click", function() {
+                document.location = '@Url.Action("Create")';
+            });
+        });
+    </script>
+}
+
+<h2>Courses</h2>
+<div id="datagrid"></div>

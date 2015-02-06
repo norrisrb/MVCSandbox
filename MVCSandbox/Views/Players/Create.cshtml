@@ -1,0 +1,138 @@
+﻿@model MVCSandbox.OpenAccess.Player
+
+@{
+    ViewBag.Title = "Add Player";
+}
+
+@section Scripts
+{
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+
+    <script>
+        $(document).ready(function() {
+            $("#form-create-player").kendoValidator();
+
+            $(".editButton").kendoButton({
+                spriteCssClass: "k-icon k-i-folder-add"
+            });
+
+            $(".closeButton").kendoButton({
+                icon: "close"
+            });
+        });
+    </script>
+}
+
+<form id="form-create-player" role="form" method="POST" action="@Url.Action("Create", "Players")" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <div class="container-fluid">
+        <div class="row" style="padding-bottom: 10px;">
+            <h2><a href="@Url.Action("Index")" title="Back to Player List"><i class="fa fa-arrow-circle-o-left"></i></a>Add Player</h2>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label for="firstName" class="control-label required">First:</label>
+                <div class="form-controls">
+                    <input id="firstName" name="firstName" class="k-input k-textbox" data-role="textbox" required validationmessage="Yo numbnuts forgetting First Name!" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="firstName"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="middleName" class="control-label">Middle:</label>
+                <div class="form-controls">
+                    <input id="middleName" name="middleName" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="middleName"></span>
+            </div>
+            <div class="form-controls col-md-4">
+                <label for="lastName" class="control-label required">Last:</label>
+                <div class="form-controls">
+                    <input id="lastName" name="lastName" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="lastName"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="homePhone" class="control-label">Home Phone:</label>
+                <div class="form-controls">
+                    <input id="homePhone" name="homePhone" class="k-input k-textbox" data-role="textbox" placeholder="(941) 755-1234" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="homePhone"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email" class="control-label required">Email:</label>
+                <div class="form-controls">
+                    <input id="email" name="email" class="k-input k-textbox" data-role="textbox" required validationmessage="Yo numbnuts forgetting Email Address!" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="mobilePhone" class="control-label required">Cell:</label>
+                <div class="form-controls">
+                    <input id="mobilePhone" name="mobilePhone" class="k-input k-textbox" data-role="textbox" placeholder="(941) 518-1234" required validationmessage="Yo numbnuts forgetting cell number!" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="mobilePhone"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="address1" class="control-label">Address:</label>
+                <div class="form-controls">
+                    <input id="address1" name="address1" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="address1"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="handicap" class="control-label required">Handicap:</label>
+                <div class="form-controls">
+                    <input id="handicap" name="handicap" class="k-input k-textbox" style="width: 50px;" maxlength="2" required validationmessage="Yo numbnuts forgetting handicap!" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="handicap"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="address2" class="control-label">Address:</label>
+                <div class="form-controls">
+                    <input id="address2" name="address2" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="address2"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="active" class="control-label">Active:</label>
+                <input id="active" name="active" type="checkbox" value="true" checked />
+            </div>
+            <div class="form-group col-md-3">
+                <label for="city" class="control-label">City:</label>
+                <div class="form-controls">
+                    <input id="city" name="city" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="city"></span>
+            </div>
+            <div class="form-group col-md-1">
+                <label for="state" class="control-label">State:</label>
+                <div class="form-controls">
+                    <input id="state" name="state" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="state"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="zip" class="control-label">Zip:</label>
+                <div class="form-controls">
+                    <input id="zip" name="zip" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="zip"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-12" style="text-align: center; padding-top: 20px;">
+                    <button class="editButton">Save</button>
+                    <span class="closeButton k-button k-button-icontext" style="text-decoration: none;">@Html.ActionLink("Cancel", "Index")</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

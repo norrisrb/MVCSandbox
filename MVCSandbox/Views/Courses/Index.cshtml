@@ -1,0 +1,153 @@
+﻿@model IEnumerable<MVCSandbox.OpenAccess.Course>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section Styles
+{
+    <style>
+        #datagrid {
+            border-width: 0;
+            height: 100%;
+        }
+    </style>
+}
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            var gridDataSource = new kendo.data.DataSource({
+                pageSize: 30,
+                transport: {
+                    read: {
+                        url: "/Courses/GetCourses",
+                    }
+                },
+                schema:
+                {
+                    model:
+                    {
+                        fields:
+                        {
+                            CourseId: { type: "number" },
+                            CourseName: { type: "string" },
+                            Yardage: { type: "number" },
+                            Tee: { type: "string" },
+                            Slope: { type: "number" },
+                            Website: { type: "string" },
+                            Phone: { type: "string" },
+                        }
+                    }
+                }
+            });
+
+            var grid = $("#datagrid").kendoGrid({
+                toolbar: ["create", "excel", "pdf"],
+                messages: {
+                    commands: {
+                        create: "Add Course",
+                    }
+                },
+                dataSource: gridDataSource,
+                filterable: {
+                    mode: "row"
+                },
+                sortable: true,
+                pagable: {
+                    refresh: true,
+                },
+                columns:
+                [
+                    {
+                        field: "",
+                        title: "&nbsp;",
+                        width: 240,
+                        filterable: false,
+                        sortable: false,
+                        template: "<a class=\"k-button k-button-icontext k-grid-edit\" href=\"@Url.Action("Edit")?id=#= CourseId #\" title=\"View Course Detail\"><span class=\"k-icon k-edit\"></span>Edit</a><a class=\"k-button k-button-icontext k-grid-delete\" href=\"@Url.Action("Delete")?id=#= CourseId #\" title=\"Delete Course\"><span class=\"k-icon k-delete\"></span>Delete</a>"
+                    },
+                    {
+                        field: "CourseName",
+                        title: "Name",
+                        headerAttributes: { style: "text-align: center;" },
+                        filterable: {
+                            cell: {
+                                inputWidth: "100%",
+                                showOperators: false,
+                                opeartor: "contains"
+                            }
+                        }
+                    },
+                    {
+                        field: "Yardage",
+                        headerAttributes: { style: "text-align: center;" },
+                        attributes: { style: "text-align: right;" },
+                        filterable: {
+                            cell: {
+                                inputWidth: "100%",
+                                opeartor: "gte",
+                                template: function(args) {
+                                    args.element.kendoNumericTextBox({ "format": "n0", "decimals": 0, "spinners": false });
+                                }
+                            }
+                        }
+                    },
+                    {
+                        field: "Tee",
+                        width: 100,
+                        headerAttributes: { style: "text-align: center;" },
+                        filterable: false,
+                    },
+                    {
+                        field: "Slope",
+                        headerAttributes: { style: "text-align: center" },
+                        attributes: { style: "text-align: right;"},
+                        filterable: {
+                            cell: {
+                                inputWidth: "100%",
+                                operator: "gte",
+                                template: function(args) {
+                                    args.element.kendoNumericTextBox({ "format": "n0", "decimals": 0, "spinners": false });
+                                }
+                            }
+                        }
+                    },
+                    {
+                        field: "Website",
+                        width: 200,
+                        headerAttributes: { style: "text-align: center" },
+                        template: "<a href=\"#= Website #\"><span>#= Website #</span></a>",
+                        filterable: {
+                            cell: {
+                                inputWidth: "100%",
+                                showOperators: false,
+                                operator: "contains"
+                            }
+                        }
+                    },
+                    {
+                        field: "Phone",
+                        headerAttributes: "style: text-align: center;",
+                        filterable: {
+                            cell: {
+                                inputWidth: "100%",
+                                showOperators: false,
+                                operator: "contains"
+                            }
+                        }
+                    }
+                ]
+            }).data("kendoGrid");
+
+            $(".k-grid-add").on("click", function() {
+                document.location = '@Url.Action("Create")';
+            });
+        });
+    </script>
+}
+
+<h2>Courses</h2>
+<div id="datagrid"></div>

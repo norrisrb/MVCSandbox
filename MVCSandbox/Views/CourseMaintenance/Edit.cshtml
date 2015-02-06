@@ -1,0 +1,94 @@
+﻿@model MVCSandbox.OpenAccess.CourseMaintenance
+
+@{
+    ViewBag.Title = "Edit Course Maintenance";
+}
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function() {
+            $("#form-edit-courseMaint").kendoValidator();
+
+            $(".editButton").kendoButton({
+                spriteCssClass: "k-icon k-i-folder-add"
+            });
+
+            $(".closeButton").kendoButton({
+                icon: "close"
+            });
+
+            $("#courseName").kendoDropDownList({
+                dataTextField: "CourseName",
+                dataValueField: "CourseId",
+                dataSource : {
+                    transport: {
+                        read: {
+                            url: "@Url.Action("GetCourseList")"
+                        }
+                    },
+                }
+            });
+
+            $("#maintenanceDate").kendoDatePicker({
+
+            });
+
+            $("#maintenanceType").kendoDropDownList({
+                dataTextField: "text",
+                dataValueField: "value",
+                dataSource: [
+                    { text: "Large Holes", value: "1" },
+                    { text: "Small Holes", value: "2" },
+                    { text: "Verti-cut", value: "3" }
+                ]
+            });
+        });
+    </script>
+}
+
+<form id="form-edit-courseMaint" role="form" method="POST" action="@Url.Action("Edit", "CourseMaintenance")" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <div class="container-fluid">
+        <div class="row" style="padding-bottom: 10px;">
+            <h2><a href="@Url.Action("Index")" title="Back to Course Maintenance List"><i class="fa fa-arrow-circle-o-left"></i></a>Edit Course Maintenance - <span style="color: gray;">@Model.CourseId</span></h2>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6 col-lg-6">
+                <label for="courseName" class="control-label required">Course Name:</label>
+                <div class="form-controls">
+                    <input id="courseName" name="courseName" value="@Model.CourseId" required validationmessage="Yo numbnuts forgetting Course Name!" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="courseName"></span>
+            </div>
+            <div class="form-controls col-md-6 col-lg-6">
+                <label for="maintenanceDate" class="control-label required">Maintenance Date:</label>
+                <div class="form-controls">
+                    <input id="maintenanceDate" name="maintenanceDate" value="@Model.MaintenanceDate" required validationmessage="Yo numbnuts forgetting Maintenance Date!" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="maintenanceDate"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="maintenanceType" class="control-label">Maintenance Type:</label>
+                <div class="form-controls">
+                    <input id="maintenanceType" name="maintenanceType" value="@Model.MaintenanceType" placeholder="Select a Maintenance Type" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="maintenanceType"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="firmDate" class="control-label">Firm Date:</label>
+                <input id="firmDate" name="firmDate" type="checkbox" class="k-checkbox" value="true" checked />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-12" style="text-align: center; padding-top: 20px;">
+                    <button class="editButton">Save</button>
+                    <span class="closeButton k-button k-button-icontext" style="text-decoration: none;">@Html.ActionLink("Cancel", "Index")</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

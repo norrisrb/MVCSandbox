@@ -1,0 +1,168 @@
+﻿@model IEnumerable<MVCSandbox.OpenAccess.Player>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section Styles
+{
+    <style>
+        #datagrid {
+            border-width: 0;
+            height: 100%;
+        }
+    </style>
+}
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            var gridDataSource = new kendo.data.DataSource({
+                pageSize: 30,
+                transport: {
+                    read: {
+                        url: "/Players/GetPlayers",
+                    }
+                },
+                schema:
+                {
+                    model:
+                    {
+                        fields:
+                        {
+                            PlayerId: { type: "number" },
+                            FirstName: { type: "string" },
+                            LastName: { type: "string" },
+                            Email: { type: "string" },
+                            MobilePhone: { type: "string" },
+                            Handicap: { type: "number" },
+                            Active: { type: "boolean" }
+                        }
+                    }
+                }
+            });
+
+            var grid = $("#datagrid").kendoGrid({
+                toolbar: ["create", "excel", "pdf"],
+                messages: {
+                    commands: {
+                        create: "Add Player",
+                    }
+                },
+                dataSource: gridDataSource,
+                filterable: {
+                    mode: "row"
+                },
+                sortable: true,
+                pagable:
+                {
+                    refresh: true,
+                },
+                columns:
+                [
+                {
+                    field: "",
+                    title: "&nbsp;",
+                    width: 240,
+                    filterable: false,
+                    sortable: false,
+                    template: "<a class=\"k-button k-button-icontext k-grid-edit\" href=\"@Url.Action("Edit")?id=#=PlayerId#\" title=\"View Player Detail\"><span class=\"k-icon k-edit\"></span>Edit</a><a class=\"k-button k-button-icontext k-grid-delete\" href=\"@Url.Action("Delete")?id=#=PlayerId#\" title=\"Delete Player Detail\"><span class=\"k-icon k-delete\"></span>Delete</a>"
+                },
+                {
+                    field: "LastName",
+                    title: "Name",
+                    template: "#= FirstName# #= LastName #",
+                    headerAttributes: { style: "text-align: center;" },
+                    filterable: {
+                        cell: {
+                            inputWidth: "100%",
+                            showOperators: false,
+                            operator: "contains"
+                        }
+                    }
+                },
+                {
+                    field: "Email",
+                    width: 200,
+                    template: "<a href=\"mailto:#= Email #\" title=\"Email Player\"><span>#= Email #</span></a>",
+                    headerAttributes: { style: "text-align:center;" },
+                    filterable: {
+                        cell: {
+                            inputWidth: "100%",
+                            showOperators: false,
+                            operator: "contains"
+                        }
+                    }
+                },
+                {
+                    field: "MobilePhone",
+                    title: "Cell",
+                    headerAttributes: { style: "text-align:center;" },
+                    filterable: {
+                        cell: {
+                            inputWidth: "100%",
+                            showOperators: false,
+                            operator: "contains"
+                        }
+                    },
+                    template: "#= formatPhone(MobilePhone) #"
+                },
+                {
+                    field: "Handicap",
+                    headerAttributes: { style: "text-align:center;" },
+                    attributes: { style: "text-align: right;" },
+                    filterable: {
+                        cell: {
+                            inputWidth: "100%",
+                            operator: "gte",
+                            template: function (args) {
+                                args.element.kendoNumericTextBox({ "format": "n0", "decimals": 0, "spinners": false });
+                            }
+                        }
+                    }
+                },
+                {
+                    field: "Active",
+                    template: "<input type=\"checkbox\"#if(Active){#checked#}# />",
+                    headerAttributes: { style: "text-align:center;" },
+                    attributes: { style: "text-align: center;" },
+                    filterable: {
+                        cell: {
+                            inputWidth: "90%",
+                            template: function (args) {
+                                //args.element.label({ "style": "text-size: .5em;" });
+                            }
+                        }
+                    }
+                }
+                ]
+            }).data("kendoGrid");
+
+            $(".k-grid-add").on("click", function () {
+                document.location = '@Url.Action("Create")';
+            });
+        });
+
+        function formatPhone(phoneNum) {
+            var regexObj = /^(?:\+?1[-. ]?)?(?:\(?([0-9]{3})\)?[-. ]?)?([0-9]{3})[-. ]?([0-9]{4})$/;
+            if (regexObj.test(phoneNum)) {
+                var parts = phoneNum.match(regexObj);
+                var phone = "";
+                if (parts[1]) {
+                    phone += "(" + parts[1] + ") ";
+                }
+                phone += parts[2] + "-" + parts[3];
+                return phone;
+            } else {
+                //invalid phone number
+                return phoneNum;
+            }
+        };
+    </script>
+}
+
+<h2>Players</h2>
+
+<div id="datagrid"></div>

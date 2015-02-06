@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_ConvertModelWizard_Files\UpgradeReferences.xslt"?>
+<UpgradeLog>
+  <Events>
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\MVCSandboxWeb.csproj" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\MVCSandboxWeb.csproj" Message="Project References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\MVCSandboxWeb.csproj" Message="Import Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\packages.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\packages.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\packages.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\packages.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\packages.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\packages.config" Message="packages.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Views\Web.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Views\Web.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Views\Web.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Views\Web.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Views\Web.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Views\Web.config" Message="Web.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.config" Message="Web.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.Debug.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.Debug.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.Debug.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.Debug.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.Debug.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.Debug.config" Message="Web.Debug.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.Release.config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.Release.config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.Release.config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.Release.config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.Release.config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\Web.Release.config" Message="Web.Release.config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\MVCSandboxWeb.csproj" Message="MVCSandboxWeb" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\MVCSandbox.OpenAccess.csproj" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\MVCSandbox.OpenAccess.csproj" Message="Project References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\MVCSandbox.OpenAccess.csproj" Message="Import Directives" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\App.Config" Message="Assembly References" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\App.Config" Message="Http Handlers" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\App.Config" Message="Handlers (IIS7+)" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\App.Config" Message="Config Sections" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\App.Config" Message="Render Extensions" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\App.Config" Message="App.Config" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\MVCSandbox.OpenAccess.csproj" Message="MVCSandbox.OpenAccess" />
+    <Event EventType="Success" Action="Analyze" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.sln" Message="MVCSandbox" />
+    <Event EventType="Success" Action="Upgrade" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\MVCSandbox.OpenAccess.csproj" Message="Assembly References" />
+    <Event EventType="Success" Action="Upgrade" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.OpenAccess\MVCSandbox.OpenAccess.csproj" Message="MVCSandbox.OpenAccess" />
+    <Event EventType="Success" Action="Upgrade" SourceItem="C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox.sln" Message="MVCSandbox" />
+  </Events>
+</UpgradeLog>

@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="EntitiesModel" namespace="MVCSandbox.OpenAccess" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="EntitiesModel" backend="mssql" default-schema="dbo" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="MVCSandbox.OpenAccess" default="true">
+      <orm:class name="Player" uniqueId="5f5a18ce-774e-4589-8ad5-c90920b396d1">
+        <orm:table name="Players" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="PlayerId" />
+          </orm:key-generator>
+          <orm:single-field field-name="_playerId" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_playerId" property="PlayerId" behavior="readwrite" uniqueId="e08c637d-b3b1-4744-a6c8-8741f31b78c9" type="System.Int32">
+          <orm:column name="PlayerId" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_firstName" property="FirstName" behavior="readwrite" uniqueId="333de784-5cbd-4fbd-8fe7-1653e1b80ff6" type="System.String">
+          <orm:column name="FirstName" sql-type="nvarchar" nullable="false" length="15" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_middleName" property="MiddleName" behavior="readwrite" uniqueId="8b088f3a-97b0-4a08-8657-81f77785004f" type="System.String">
+          <orm:column name="MiddleName" sql-type="nvarchar" nullable="true" length="10" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_lastName" property="LastName" behavior="readwrite" uniqueId="0785d6cb-4cc4-4211-995c-65f847575c95" type="System.String">
+          <orm:column name="LastName" sql-type="nvarchar" nullable="false" length="25" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_email" property="Email" behavior="readwrite" uniqueId="7889570c-b9eb-48e8-a6dd-9127c1575adb" type="System.String">
+          <orm:column name="Email" sql-type="nvarchar" nullable="false" length="256" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_address1" property="Address1" behavior="readwrite" uniqueId="a19b1e33-5f49-49e7-bc9b-3dc15e7e5f78" type="System.String">
+          <orm:column name="Address1" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_address2" property="Address2" behavior="readwrite" uniqueId="680b76c9-fe60-4f23-800a-73173d02c7b5" type="System.String">
+          <orm:column name="Address2" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_city" property="City" behavior="readwrite" uniqueId="341f9bcc-7eab-428d-bb96-3f2ee70793dc" type="System.String">
+          <orm:column name="City" sql-type="nvarchar" nullable="true" length="20" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_state" property="State" behavior="readwrite" uniqueId="e8a318f5-fedf-4a23-b5a2-a7aa74466a17" type="System.String">
+          <orm:column name="State" sql-type="nvarchar" nullable="true" length="2" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_zip" property="Zip" behavior="readwrite" uniqueId="bc9b3ec8-7e48-4016-a87c-a6146c83c418" type="System.String">
+          <orm:column name="Zip" sql-type="nvarchar" nullable="true" length="10" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_homePhone" property="HomePhone" behavior="readwrite" uniqueId="a05bb7b6-ea84-4f21-b5f4-85e2acda4bd7" type="System.String">
+          <orm:column name="HomePhone" sql-type="nvarchar" nullable="true" length="15" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_mobilePhone" property="MobilePhone" behavior="readwrite" uniqueId="3a5858ac-1999-46d3-9a73-16b70cb3ca54" type="System.String">
+          <orm:column name="MobilePhone" sql-type="nvarchar" nullable="false" length="15" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_handicap" property="Handicap" behavior="readwrite" uniqueId="0a717709-60c8-4000-8726-7d775a6270ca" type="System.Byte">
+          <orm:column name="Handicap" sql-type="tinyint" nullable="false" length="0" scale="0" ado-type="Byte" />
+        </orm:field>
+        <orm:field name="_active" property="Active" behavior="readwrite" uniqueId="00af1d04-9f6c-4bde-9e9d-da158b7c503d" type="System.Boolean">
+          <orm:column name="Active" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_created" property="Created" behavior="readwrite" uniqueId="d6827f8a-7620-4e36-9ce4-2cf87b8406af" type="System.DateTime">
+          <orm:column name="Created" sql-type="datetime2" nullable="false" length="7" scale="0" has-default-value="true" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_modified" property="Modified" behavior="readwrite" uniqueId="e653411f-7b62-41f0-8898-0a6ab06bc424" type="System.DateTime">
+          <orm:column name="Modified" sql-type="datetime2" nullable="false" length="7" scale="0" has-default-value="true" ado-type="DateTime" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Course" uniqueId="5d2ec793-6977-46c7-bd05-f506fc31122f">
+        <orm:table name="Courses" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="CourseId" />
+          </orm:key-generator>
+          <orm:single-field field-name="_courseId" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_courseId" property="CourseId" behavior="readwrite" uniqueId="7f89eb1c-fed2-4c98-88f6-05f0a96df954" type="System.Int32">
+          <orm:column name="CourseId" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_courseName" property="CourseName" behavior="readwrite" uniqueId="26818420-ee3d-4591-98eb-9bed57a963b8" type="System.String">
+          <orm:column name="CourseName" sql-type="nvarchar" nullable="false" length="256" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_yardage" property="Yardage" behavior="readwrite" uniqueId="ad7d493a-5a67-48bb-924b-fe9a0fa88688" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Yardage" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_tee" property="Tee" behavior="readwrite" uniqueId="793824d1-2aab-44b4-a3f1-98485a6c0e96" type="System.String">
+          <orm:column name="Tee" sql-type="nvarchar" nullable="true" length="10" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_slope" property="Slope" behavior="readwrite" uniqueId="c87c948e-e8f8-45ce-9361-87212fb74891" type="System.Nullable`1[[System.Byte, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Slope" sql-type="tinyint" nullable="true" length="0" scale="0" ado-type="Byte" />
+        </orm:field>
+        <orm:field name="_rating" property="Rating" behavior="readwrite" uniqueId="6fb134a1-141b-4bed-b8f0-622cc512b67f" type="System.Nullable`1[[System.Byte, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Rating" sql-type="tinyint" nullable="true" length="0" scale="0" ado-type="Byte" />
+        </orm:field>
+        <orm:field name="_address1" property="Address1" behavior="readwrite" uniqueId="7af3a30c-2043-4a0e-808b-99fd47cae91c" type="System.String">
+          <orm:column name="Address1" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_address2" property="Address2" behavior="readwrite" uniqueId="896aaa00-4ff8-49ce-bfdb-d2dfb0257d55" type="System.String">
+          <orm:column name="Address2" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_city" property="City" behavior="readwrite" uniqueId="297d00b4-a9f5-471f-89aa-6a2049fb9eeb" type="System.String">
+          <orm:column name="City" sql-type="nvarchar" nullable="true" length="20" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_state" property="State" behavior="readwrite" uniqueId="23931f21-d227-4dc3-ad21-4fae07265f3c" type="System.String">
+          <orm:column name="State" sql-type="nvarchar" nullable="true" length="2" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_zip" property="Zip" behavior="readwrite" uniqueId="cb0b3197-face-417e-b84f-872a2f7c6179" type="System.String">
+          <orm:column name="Zip" sql-type="nvarchar" nullable="true" length="10" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_website" property="Website" behavior="readwrite" uniqueId="c1bb3d6b-dacf-415d-afb8-beb86b3c99e2" type="System.String">
+          <orm:column name="Website" sql-type="nvarchar" nullable="true" length="256" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_phone" property="Phone" behavior="readwrite" uniqueId="07e51905-bfb9-405e-83bb-8847440446b4" type="System.String">
+          <orm:column name="Phone" sql-type="nvarchar" nullable="true" length="15" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_notes" property="Notes" behavior="readwrite" uniqueId="042e8dee-d0dd-4ead-ab0b-f3f9bb6c5a27" type="System.String">
+          <orm:column name="Notes" sql-type="nvarchar" nullable="true" length="256" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_created" property="Created" behavior="readwrite" uniqueId="273c22ec-c082-4f4b-a273-1071a0aa66d2" type="System.DateTime">
+          <orm:column name="Created" sql-type="datetime2" nullable="false" length="7" scale="0" has-default-value="true" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_modified" property="Modified" behavior="readwrite" uniqueId="30ee7635-a2c6-45e1-bf5a-29daa6c9cdcd" type="System.DateTime">
+          <orm:column name="Modified" sql-type="datetime2" nullable="false" length="7" scale="0" has-default-value="true" ado-type="DateTime" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="CourseMaintenance" uniqueId="29561a69-5cc4-4cf6-8694-f13610dbf886">
+        <orm:table name="CourseMaintenance" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="CourseMaintId" />
+          </orm:key-generator>
+          <orm:single-field field-name="_courseMaintId" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_courseMaintId" property="CourseMaintId" behavior="readwrite" uniqueId="1b214bfd-e543-494f-9775-78b24b0905f7" type="System.Int32">
+          <orm:column name="CourseMaintId" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_courseId" property="CourseId" behavior="readwrite" uniqueId="f768c1e1-c6a4-4acf-88f3-96fbc02421b5" type="System.Int32">
+          <orm:column name="CourseId" sql-type="int" nullable="false" length="0" scale="0" foreign-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_maintenanceDate" property="MaintenanceDate" behavior="readwrite" uniqueId="f80b10e1-b3e5-46f4-ad13-34e32cb7057f" type="System.DateTime">
+          <orm:column name="MaintenanceDate" sql-type="datetime2" nullable="false" length="7" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_maintenanceType" property="MaintenanceType" behavior="readwrite" uniqueId="fbe872d7-2c03-4ed8-a281-e3f69d684c74" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="MaintenanceType" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_firmDate" property="FirmDate" behavior="readwrite" uniqueId="5519ea3b-cd1c-4cc2-a295-6d2efb2a5469" type="System.Boolean">
+          <orm:column name="FirmDate" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="Players">
+        <orm:column name="PlayerId" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="FirstName" sql-type="nvarchar" nullable="false" length="15" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="MiddleName" sql-type="nvarchar" nullable="true" length="10" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="LastName" sql-type="nvarchar" nullable="false" length="25" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Email" sql-type="nvarchar" nullable="false" length="256" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Address1" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Address2" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="City" sql-type="nvarchar" nullable="true" length="20" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="State" sql-type="nvarchar" nullable="true" length="2" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Zip" sql-type="nvarchar" nullable="true" length="10" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="HomePhone" sql-type="nvarchar" nullable="true" length="15" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="MobilePhone" sql-type="nvarchar" nullable="false" length="15" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Handicap" sql-type="tinyint" nullable="false" length="0" scale="0" ado-type="Byte" />
+        <orm:column name="Active" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="Created" sql-type="datetime2" nullable="false" length="7" scale="0" has-default-value="true" ado-type="DateTime" />
+        <orm:column name="Modified" sql-type="datetime2" nullable="false" length="7" scale="0" has-default-value="true" ado-type="DateTime" />
+      </orm:table>
+      <orm:table name="Courses">
+        <orm:column name="CourseId" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="CourseName" sql-type="nvarchar" nullable="false" length="256" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Yardage" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="Tee" sql-type="nvarchar" nullable="true" length="10" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Slope" sql-type="tinyint" nullable="true" length="0" scale="0" ado-type="Byte" />
+        <orm:column name="Rating" sql-type="tinyint" nullable="true" length="0" scale="0" ado-type="Byte" />
+        <orm:column name="Address1" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Address2" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="City" sql-type="nvarchar" nullable="true" length="20" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="State" sql-type="nvarchar" nullable="true" length="2" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Zip" sql-type="nvarchar" nullable="true" length="10" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Website" sql-type="nvarchar" nullable="true" length="256" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Phone" sql-type="nvarchar" nullable="true" length="15" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Notes" sql-type="nvarchar" nullable="true" length="256" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Created" sql-type="datetime2" nullable="false" length="7" scale="0" has-default-value="true" ado-type="DateTime" />
+        <orm:column name="Modified" sql-type="datetime2" nullable="false" length="7" scale="0" has-default-value="true" ado-type="DateTime" />
+      </orm:table>
+      <orm:table name="CourseMaintenance">
+        <orm:column name="CourseMaintId" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="CourseId" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="MaintenanceDate" sql-type="datetime2" nullable="false" length="7" scale="0" ado-type="DateTime" />
+        <orm:column name="MaintenanceType" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="FirmDate" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>SandboxDatabaseConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>data source=(LocalDB)\v11.0;attachdbfilename=C:\GitHub\MVCSandbox\MVCSandbox\MVCSandbox\App_Data\SandboxDatabase.mdf;integrated security=True</AppConfigConnectionString>
+    <InitialCatalog>SandboxDatabase</InitialCatalog>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+      <NavigationPropertyRules />
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MsSql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+    <UseSchemaAsNamespace>true</UseSchemaAsNamespace>
+    <CreateDiagramPerSchema>true</CreateDiagramPerSchema>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="5f5a18ce-774e-4589-8ad5-c90920b396d1" name="Player" namespace="MVCSandbox.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="PlayerId">
+      <Property Id="e08c637d-b3b1-4744-a6c8-8741f31b78c9" name="PlayerId" type="Int32" label="PlayerId : Int32" kind="Persistent" identity="true" fieldName="_playerId" />
+      <Property Id="00af1d04-9f6c-4bde-9e9d-da158b7c503d" name="Active" type="Boolean" label="Active : Boolean" kind="Persistent" fieldName="_active" />
+      <Property Id="a19b1e33-5f49-49e7-bc9b-3dc15e7e5f78" name="Address1" label="Address1 : String" kind="Persistent" fieldName="_address1" />
+      <Property Id="680b76c9-fe60-4f23-800a-73173d02c7b5" name="Address2" label="Address2 : String" kind="Persistent" fieldName="_address2" />
+      <Property Id="341f9bcc-7eab-428d-bb96-3f2ee70793dc" name="City" label="City : String" kind="Persistent" fieldName="_city" />
+      <Property Id="d6827f8a-7620-4e36-9ce4-2cf87b8406af" name="Created" type="DateTime" label="Created : DateTime" kind="Persistent" fieldName="_created" />
+      <Property Id="7889570c-b9eb-48e8-a6dd-9127c1575adb" name="Email" label="Email : String" kind="Persistent" fieldName="_email" />
+      <Property Id="333de784-5cbd-4fbd-8fe7-1653e1b80ff6" name="FirstName" label="FirstName : String" kind="Persistent" fieldName="_firstName" />
+      <Property Id="0a717709-60c8-4000-8726-7d775a6270ca" name="Handicap" type="Byte" label="Handicap : Byte" kind="Persistent" fieldName="_handicap" />
+      <Property Id="a05bb7b6-ea84-4f21-b5f4-85e2acda4bd7" name="HomePhone" label="HomePhone : String" kind="Persistent" fieldName="_homePhone" />
+      <Property Id="0785d6cb-4cc4-4211-995c-65f847575c95" name="LastName" label="LastName : String" kind="Persistent" fieldName="_lastName" />
+      <Property Id="8b088f3a-97b0-4a08-8657-81f77785004f" name="MiddleName" label="MiddleName : String" kind="Persistent" fieldName="_middleName" />
+      <Property Id="3a5858ac-1999-46d3-9a73-16b70cb3ca54" name="MobilePhone" label="MobilePhone : String" kind="Persistent" fieldName="_mobilePhone" />
+      <Property Id="e653411f-7b62-41f0-8898-0a6ab06bc424" name="Modified" type="DateTime" label="Modified : DateTime" kind="Persistent" fieldName="_modified" />
+      <Property Id="e8a318f5-fedf-4a23-b5a2-a7aa74466a17" name="State" label="State : String" kind="Persistent" fieldName="_state" />
+      <Property Id="bc9b3ec8-7e48-4016-a87c-a6146c83c418" name="Zip" label="Zip : String" kind="Persistent" fieldName="_zip" />
+    </DomainClass>
+    <DomainClass Id="5d2ec793-6977-46c7-bd05-f506fc31122f" name="Course" namespace="MVCSandbox.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="CourseId">
+      <Property Id="7f89eb1c-fed2-4c98-88f6-05f0a96df954" name="CourseId" type="Int32" label="CourseId : Int32" kind="Persistent" identity="true" fieldName="_courseId" />
+      <Property Id="7af3a30c-2043-4a0e-808b-99fd47cae91c" name="Address1" label="Address1 : String" kind="Persistent" fieldName="_address1" />
+      <Property Id="896aaa00-4ff8-49ce-bfdb-d2dfb0257d55" name="Address2" label="Address2 : String" kind="Persistent" fieldName="_address2" />
+      <Property Id="297d00b4-a9f5-471f-89aa-6a2049fb9eeb" name="City" label="City : String" kind="Persistent" fieldName="_city" />
+      <Property Id="26818420-ee3d-4591-98eb-9bed57a963b8" name="CourseName" label="CourseName : String" kind="Persistent" fieldName="_courseName" />
+      <Property Id="273c22ec-c082-4f4b-a273-1071a0aa66d2" name="Created" type="DateTime" label="Created : DateTime" kind="Persistent" fieldName="_created" />
+      <Property Id="30ee7635-a2c6-45e1-bf5a-29daa6c9cdcd" name="Modified" type="DateTime" label="Modified : DateTime" kind="Persistent" fieldName="_modified" />
+      <Property Id="042e8dee-d0dd-4ead-ab0b-f3f9bb6c5a27" name="Notes" label="Notes : String" kind="Persistent" fieldName="_notes" />
+      <Property Id="07e51905-bfb9-405e-83bb-8847440446b4" name="Phone" label="Phone : String" kind="Persistent" fieldName="_phone" />
+      <Property Id="6fb134a1-141b-4bed-b8f0-622cc512b67f" name="Rating" type="Byte" label="Rating : Byte" nullable="true" kind="Persistent" fieldName="_rating" />
+      <Property Id="c87c948e-e8f8-45ce-9361-87212fb74891" name="Slope" type="Byte" label="Slope : Byte" nullable="true" kind="Persistent" fieldName="_slope" />
+      <Property Id="23931f21-d227-4dc3-ad21-4fae07265f3c" name="State" label="State : String" kind="Persistent" fieldName="_state" />
+      <Property Id="793824d1-2aab-44b4-a3f1-98485a6c0e96" name="Tee" label="Tee : String" kind="Persistent" fieldName="_tee" />
+      <Property Id="c1bb3d6b-dacf-415d-afb8-beb86b3c99e2" name="Website" label="Website : String" kind="Persistent" fieldName="_website" />
+      <Property Id="ad7d493a-5a67-48bb-924b-fe9a0fa88688" name="Yardage" type="Int16" label="Yardage : Int16" nullable="true" kind="Persistent" fieldName="_yardage" />
+      <Property Id="cb0b3197-face-417e-b84f-872a2f7c6179" name="Zip" label="Zip : String" kind="Persistent" fieldName="_zip" />
+    </DomainClass>
+    <DomainClass Id="29561a69-5cc4-4cf6-8694-f13610dbf886" name="CourseMaintenance" namespace="MVCSandbox.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="CourseMaintId">
+      <Property Id="1b214bfd-e543-494f-9775-78b24b0905f7" name="CourseMaintId" type="Int32" label="CourseMaintId : Int32" kind="Persistent" identity="true" fieldName="_courseMaintId" />
+      <Property Id="f768c1e1-c6a4-4acf-88f3-96fbc02421b5" name="CourseId" type="Int32" label="CourseId : Int32" kind="Persistent" fieldName="_courseId" />
+      <Property Id="5519ea3b-cd1c-4cc2-a295-6d2efb2a5469" name="FirmDate" type="Boolean" label="FirmDate : Boolean" kind="Persistent" fieldName="_firmDate" />
+      <Property Id="f80b10e1-b3e5-46f4-ad13-34e32cb7057f" name="MaintenanceDate" type="DateTime" label="MaintenanceDate : DateTime" kind="Persistent" fieldName="_maintenanceDate" />
+      <Property Id="fbe872d7-2c03-4ed8-a281-e3f69d684c74" name="MaintenanceType" type="Int32" label="MaintenanceType : Int32" kind="Persistent" fieldName="_maintenanceType" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="ce55a922-660c-4c85-90a9-294c2710b277">
+      <domainContainer name="EntitiesModel" namespace="MVCSandbox.OpenAccess" showPropertiesCompartment="true">
+        <entitySetProperty name="Players" namespace="MVCSandbox.OpenAccess" type="Player" label="Players : IQueryable&lt;MVCSandbox.OpenAccess.Player&gt;" />
+        <entitySetProperty name="Courses" namespace="MVCSandbox.OpenAccess" type="Course" label="Courses : IQueryable&lt;MVCSandbox.OpenAccess.Course&gt;" />
+        <entitySetProperty name="CourseMaintenances" namespace="MVCSandbox.OpenAccess" type="CourseMaintenance" label="CourseMaintenances : IQueryable&lt;MVCSandbox.OpenAccess.CourseMaintenance&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

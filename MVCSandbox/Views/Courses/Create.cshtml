@@ -1,0 +1,140 @@
+﻿@model MVCSandbox.OpenAccess.Course
+
+@{
+    ViewBag.Title = "Add Course";
+}
+
+@section Scripts
+{
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+
+    <script>
+        $(document).ready(function() {
+            $("#form-create-course").kendoValidator();
+
+            $(".editButton").kendoButton({
+                spriteCssClass: "k-icon k-i-folder-add"
+            });
+
+            $(".closeButton").kendoButton({
+                icon: "close"
+            });
+        });
+    </script>
+}
+
+<form id="form-create-course" role="form" method="POST" action="@Url.Action("Create", "Courses")" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <div class="container-fluid">
+        <div class="row" style="padding-bottom: 10px;">
+            <h2><a href="@Url.Action("Index")" title="Back to Course List"><i class="fa fa-arrow-circle-o-left"></i></a>Add Course</h2>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label for="courseName" class="control-label required">Course Name:</label>
+                <div class="form-controls">
+                    <input id="courseName" name="courseName" class="k-input k-textbox" data-role="textbox" required validationmessage="Yo numbnuts forgetting Course Name!" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="courseName"></span>
+            </div>
+            <div class="form-controls col-md-2">
+                <label for="tee" class="control-label">Tee:</label>
+                <div class="form-controls">
+                    <input id="tee" name="tee" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="tee"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="yardage" class="control-label">Yardage:</label>
+                <div class="form-controls">
+                    <input id="yardage" name="yardage" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="middleName"></span>
+            </div>
+            <div class="form-controls col-md-2">
+                <label for="slope" class="control-label">Slope</label>
+                <div class="form-controls">
+                    <input id="slope" name="slope" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="slope"></span>
+            </div>
+            <div class="form-controls col-md-2">
+                <label for="rating" class="control-label">Rating</label>
+                <div class="form-controls">
+                    <input id="rating" name="rating" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="rating"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="website" class="control-label">Website:</label>
+                <div class="form-controls">
+                    <input id="website" name="website" class="k-input k-textbox" data-role="textbox" placeholder="www.thenational.com" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="website"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="address1" class="control-label">Address:</label>
+                <div class="form-controls">
+                    <input id="address1" name="address1" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="address1"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="phone" class="control-label">Phone:</label>
+                <div class="form-controls">
+                    <input id="phone" name="phone" class="k-input k-textbox" data-role="textbox" placeholder="(941) 518-1234" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="mobilePhone"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="address2" class="control-label">Address:</label>
+                <div class="form-controls">
+                    <input id="address2" name="address2" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="address2"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="notes" class="control-label">Notes:</label>
+                <div class="form-controls">
+                    <input id="notes" name="notes" class="k-input k-textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="notes"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="city" class="control-label">City:</label>
+                <div class="form-controls">
+                    <input id="city" name="city" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="city"></span>
+            </div>
+            <div class="form-group col-md-1">
+                <label for="state" class="control-label">State:</label>
+                <div class="form-controls">
+                    <input id="state" name="state" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="state"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="zip" class="control-label">Zip:</label>
+                <div class="form-controls">
+                    <input id="zip" name="zip" class="k-input k-textbox" data-role="textbox" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="zip"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-12" style="text-align: center; padding-top: 20px;">
+                    <button class="editButton">Save</button>
+                    <span class="closeButton k-button k-button-icontext" style="text-decoration: none;">@Html.ActionLink("Cancel", "Index")</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
