@@ -85,14 +85,14 @@
         </div>
         <div class="row">
             <div class="form-group col-md-6">
-                <label for="handicap" class="control-label required">Handicap:</label>
+                <label for="significantother" class="control-label">Significant Other</label>
                 <div class="form-controls">
-                    <input id="handicap" name="handicap" class="k-input k-textbox" style="width: 50px;" maxlength="2" required validationmessage="Yo numbnuts forgetting handicap!" />
+                    <input id="significantother" name="significantother" class="k-input k-textbox" data-role="textbox" />
                 </div>
-                <span class="help-block k-invalid-msg" data-for="handicap"></span>
+                <span class="help-block k-invalid-msg" data-for="address2"></span>
             </div>
             <div class="form-group col-md-6">
-                <label for="address2" class="control-label">Address:</label>
+                <label for="address2" class="control-label">Address</label>
                 <div class="form-controls">
                     <input id="address2" name="address2" class="k-input k-textbox" data-role="textbox" />
                 </div>
@@ -100,26 +100,42 @@
             </div>
         </div>
         <div class="row">
-            <div class="form-group col-md-6">
-                <label for="active" class="control-label">Active:</label>
-                <input id="active" name="active" type="checkbox" value="true" checked />
+            <div class="form-group col-md-2">
+                <label for="handicap" class="control-label required">Handicap</label>
+                <div class="form-controls">
+                    <input id="handicap" name="handicap" class="k-input k-textbox" data-role="textbox" style="width: 50px;" maxlength="2" required validationmessage="Yo numbnuts forgetting handicap!" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="handicap"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="index" class="control-label required">Index</label>
+                <div class="form-controls">
+                    <input id="index" name="index" class="k-input k-textbox" data-role="textbox" style="width: 50px;" maxlength="2" required validationmessage="Yo numbnuts forgetting index!" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="handicap"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <div class="form-controls">
+                    <label for="active" class="control-label">Active</label>
+                    <input id="active" name="active" type="checkbox" />
+                </div>
             </div>
             <div class="form-group col-md-3">
-                <label for="city" class="control-label">City:</label>
+                <label for="city" class="control-label">City</label>
                 <div class="form-controls">
                     <input id="city" name="city" class="k-input k-textbox" data-role="textbox" />
                 </div>
                 <span class="help-block k-invalid-msg" data-for="city"></span>
             </div>
             <div class="form-group col-md-1">
-                <label for="state" class="control-label">State:</label>
+                <label for="state" class="control-label">State</label>
                 <div class="form-controls">
                     <input id="state" name="state" class="k-input k-textbox" data-role="textbox" />
                 </div>
                 <span class="help-block k-invalid-msg" data-for="state"></span>
             </div>
             <div class="form-group col-md-2">
-                <label for="zip" class="control-label">Zip:</label>
+                <label for="zip" class="control-label">Zip</label>
                 <div class="form-controls">
                     <input id="zip" name="zip" class="k-input k-textbox" data-role="textbox" />
                 </div>

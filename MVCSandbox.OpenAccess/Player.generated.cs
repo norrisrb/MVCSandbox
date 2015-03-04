@@ -231,6 +231,32 @@ namespace MVCSandbox.OpenAccess
 			}
 		}
 		
+		private string _significantOther;
+		public virtual string SignificantOther
+		{
+			get
+			{
+				return this._significantOther;
+			}
+			set
+			{
+				this._significantOther = value;
+			}
+		}
+		
+		private byte _index;
+		public virtual byte Index
+		{
+			get
+			{
+				return this._index;
+			}
+			set
+			{
+				this._index = value;
+			}
+		}
+		
 	}
 }
 #pragma warning restore 1591

@@ -119,11 +119,11 @@
         </div>
         <div class="row">
             <div class="form-group col-md-6">
-                <label for="handicap" class="control-label required">Handicap</label>
+                <label for="significantother" class="control-label">Significant Other</label>
                 <div class="form-controls">
-                    <input id="handicap" name="handicap" class="k-input k-textbox" data-role="textbox" value="@Model.Handicap" style="width: 50px;" maxlength="2" required validationmessage="Yo numbnuts forgetting handicap!" />
+                    <input id="significantother" name="significantother" class="k-input k-textbox" data-role="textbox" value="@Model.SignificantOther" />
                 </div>
-                <span class="help-block k-invalid-msg" data-for="handicap"></span>
+                <span class="help-block k-invalid-msg" data-for="address2"></span>
             </div>
             <div class="form-group col-md-6">
                 <label for="address2" class="control-label">Address</label>
@@ -134,7 +134,21 @@
             </div>
         </div>
         <div class="row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-2">
+                <label for="handicap" class="control-label required">Handicap</label>
+                <div class="form-controls">
+                    <input id="handicap" name="handicap" class="k-input k-textbox" data-role="textbox" value="@Model.Handicap" style="width: 50px;" maxlength="2" required validationmessage="Yo numbnuts forgetting handicap!" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="handicap"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="index" class="control-label required">Index</label>
+                <div class="form-controls">
+                    <input id="index" name="index" class="k-input k-textbox" data-role="textbox" value="@Model.Index" style="width: 50px;" maxlength="2" required validationmessage="Yo numbnuts forgetting index!" />
+                </div>
+                <span class="help-block k-invalid-msg" data-for="handicap"></span>
+            </div>
+            <div class="form-group col-md-2">
                 <div class="form-controls">
                     <label for="active" class="control-label">Active</label>
                     <input id="active" name="active" type="checkbox" value="true" @(Model.Active ? "checked" : "") />
@@ -161,7 +175,6 @@
                 </div>
                 <span class="help-block k-invalid-msg" data-for="zip"></span>
             </div>
-
         </div>
         <div class="row">
             <div class="form-group">

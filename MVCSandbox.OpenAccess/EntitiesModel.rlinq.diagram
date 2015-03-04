@@ -3,12 +3,12 @@
   <entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="EntitiesModel" isDefault="true">
     <DomainModelMoniker name="/EntitiesModel" />
     <nestedChildShapes>
-      <classShape Id="1a7f055f-21f3-4c1e-99fc-9a0698ee1b12" absoluteBounds="0.75, 0.75, 1.5, 3.881932779947916">
+      <classShape Id="1a7f055f-21f3-4c1e-99fc-9a0698ee1b12" absoluteBounds="0.75, 0.75, 1.875, 4.210627441406249">
         <DomainClassMoniker name="/EntitiesModel/Player" />
         <nestedChildShapes>
-          <elementListCompartment Id="72d66842-fe5d-4248-bf49-56b933d017dc" absoluteBounds="0.765, 1.2599999999999998, 1.4700000000000002, 2.837015787760417" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-          <elementListCompartment Id="91af56b6-1c9c-4ce0-92a4-8c49b2af5b05" absoluteBounds="0.765, 4.1070157877604165, 1.4700000000000002, 0.20745849609375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
-          <elementListCompartment Id="10a8c95a-c301-4247-93fb-0c1aa0fde938" absoluteBounds="0.765, 4.3244742838541663, 1.4700000000000002, 0.20745849609375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="72d66842-fe5d-4248-bf49-56b933d017dc" absoluteBounds="0.765, 1.26, 1.8450000000000002, 3.16571044921875" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="91af56b6-1c9c-4ce0-92a4-8c49b2af5b05" absoluteBounds="0.765, 4.43571044921875, 1.8450000000000002, 0.20745849609375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="10a8c95a-c301-4247-93fb-0c1aa0fde938" absoluteBounds="0.765, 4.6531689453124994, 1.8450000000000002, 0.20745849609375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
         </nestedChildShapes>
       </classShape>
       <classShape Id="cf0c2ab5-6801-4d67-9176-df5d2883454f" absoluteBounds="3.625, 0.75, 1.5, 3.881932779947916">

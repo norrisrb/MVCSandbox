@@ -77,7 +77,9 @@ namespace MVCSandbox.Controllers
                 originalPlayer.Zip = playerToUpdate.Zip;
                 originalPlayer.HomePhone = playerToUpdate.HomePhone;
                 originalPlayer.MobilePhone = playerToUpdate.MobilePhone;
+                originalPlayer.SignificantOther = playerToUpdate.SignificantOther;
                 originalPlayer.Handicap = playerToUpdate.Handicap;
+                originalPlayer.Index = playerToUpdate.Index;
                 originalPlayer.Active = playerToUpdate.Active;
 
                 this.dbContext.SaveChanges();

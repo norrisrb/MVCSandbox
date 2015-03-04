@@ -59,6 +59,12 @@
         <orm:field name="_modified" property="Modified" behavior="readwrite" uniqueId="e653411f-7b62-41f0-8898-0a6ab06bc424" type="System.DateTime">
           <orm:column name="Modified" sql-type="datetime2" nullable="false" length="7" scale="0" has-default-value="true" ado-type="DateTime" />
         </orm:field>
+        <orm:field name="_significantOther" property="SignificantOther" behavior="readwrite" uniqueId="50775f15-b9d4-474f-8196-d6ae364996ef" type="System.String">
+          <orm:column name="SignificantOther" sql-type="nvarchar" nullable="true" length="15" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_index" property="Index" behavior="readwrite" uniqueId="7f3bb1f5-37cc-41af-b224-79c1ce4f3a01" type="System.Byte">
+          <orm:column name="Index" sql-type="tinyint" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Byte" />
+        </orm:field>
       </orm:class>
       <orm:class name="Course" uniqueId="5d2ec793-6977-46c7-bd05-f506fc31122f">
         <orm:table name="Courses" />
@@ -131,7 +137,7 @@
           <orm:column name="CourseMaintId" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
         </orm:field>
         <orm:field name="_courseId" property="CourseId" behavior="readwrite" uniqueId="f768c1e1-c6a4-4acf-88f3-96fbc02421b5" type="System.Int32">
-          <orm:column name="CourseId" sql-type="int" nullable="false" length="0" scale="0" foreign-key="true" ado-type="Int32" />
+          <orm:column name="CourseId" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
         </orm:field>
         <orm:field name="_maintenanceDate" property="MaintenanceDate" behavior="readwrite" uniqueId="f80b10e1-b3e5-46f4-ad13-34e32cb7057f" type="System.DateTime">
           <orm:column name="MaintenanceDate" sql-type="datetime2" nullable="false" length="7" scale="0" ado-type="DateTime" />
@@ -162,6 +168,8 @@
         <orm:column name="Active" sql-type="bit" nullable="false" length="0" scale="0" ado-type="Bit" />
         <orm:column name="Created" sql-type="datetime2" nullable="false" length="7" scale="0" has-default-value="true" ado-type="DateTime" />
         <orm:column name="Modified" sql-type="datetime2" nullable="false" length="7" scale="0" has-default-value="true" ado-type="DateTime" />
+        <orm:column name="SignificantOther" sql-type="nvarchar" nullable="true" length="15" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Index" sql-type="tinyint" nullable="false" length="0" scale="0" has-default-value="true" ado-type="Byte" />
       </orm:table>
       <orm:table name="Courses">
         <orm:column name="CourseId" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
@@ -243,6 +251,8 @@
       <Property Id="e653411f-7b62-41f0-8898-0a6ab06bc424" name="Modified" type="DateTime" label="Modified : DateTime" kind="Persistent" fieldName="_modified" />
       <Property Id="e8a318f5-fedf-4a23-b5a2-a7aa74466a17" name="State" label="State : String" kind="Persistent" fieldName="_state" />
       <Property Id="bc9b3ec8-7e48-4016-a87c-a6146c83c418" name="Zip" label="Zip : String" kind="Persistent" fieldName="_zip" />
+      <Property Id="50775f15-b9d4-474f-8196-d6ae364996ef" name="SignificantOther" label="SignificantOther : String" kind="Persistent" fieldName="_significantOther" />
+      <Property Id="7f3bb1f5-37cc-41af-b224-79c1ce4f3a01" name="Index" type="Byte" label="Index : Byte" kind="Persistent" fieldName="_index" />
     </DomainClass>
     <DomainClass Id="5d2ec793-6977-46c7-bd05-f506fc31122f" name="Course" namespace="MVCSandbox.OpenAccess" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="CourseId">
       <Property Id="7f89eb1c-fed2-4c98-88f6-05f0a96df954" name="CourseId" type="Int32" label="CourseId : Int32" kind="Persistent" identity="true" fieldName="_courseId" />
